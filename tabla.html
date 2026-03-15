@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clasificación - Grand Prix PawnDown</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tabla.css">
+  
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar animate-fade-in">
+    <a href="index.html" class="navbar-brand">
+      <div class="navbar-logo">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" fill="#e8e8e8"/>
+          <path d="M12 30V25H14V22H12V20C12 18.9 12.9 18 14 18H16V16H14C12.9 16 12 15.1 12 14V12H16V10H14C12.9 10 12 9.1 12 8H28C28 9.1 27.1 10 26 10H24V12H28V14C28 15.1 27.1 16 26 16H24V18H26C27.1 18 28 18.9 28 20V22H26V25H28V30H12Z" fill="#232323"/>
+          <text x="5" y="35" font-size="7" fill="#232323" font-family="Arial">PawnDown</text>
+        </svg>
+      </div>
+      <span class="navbar-caption">PawnDown</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="clasificacion.html" class="active">Clasificacion</a></li>
+      <li><a href="index.html#contact">Contacto</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" onclick="toggleMenu()">&times;</button>
+    <a href="index.html" onclick="toggleMenu()">Inicio</a>
+    <a href="clasificacion.html" onclick="toggleMenu()">Clasificacion</a>
+    <a href="index.html#contact" onclick="toggleMenu()">Contacto</a>
+  </div>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1 class="animate-fade-in">Clasificacion del Torneo</h1>
+    <p class="animate-fade-in delay-1">Grand Prix de Ajedrez - Ensenada, Baja California 2026</p>
+  </header>
+
+  <!-- Search Section -->
+  <section class="search-section animate-fade-in delay-2">
+    <div class="search-card">
+      <h3>Consulta tu puntaje</h3>
+      <div class="search-form">
+        <input type="text" class="search-input" id="searchInput" placeholder="Escribe tu nombre..." autocomplete="off">
+        <button class="btn btn-primary" onclick="searchPlayer()">Buscar</button>
+      </div>
+      <div class="result-card" id="resultCard">
+        <div class="result-header">
+          <div class="result-avatar" id="resultAvatar">JD</div>
+          <div>
+            <div class="result-name" id="resultName">Juan Dominguez</div>
+            <div style="opacity: 0.8; font-size: 14px;" id="resultClub">Club Ensenada</div>
+          </div>
+        </div>
+        <div class="result-stats">
+          <div class="stat-item">
+            <div class="stat-value" id="resultPosition">#3</div>
+            <div class="stat-label">Posicion</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="resultElo">1850</div>
+            <div class="stat-label">Elo</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="resultPoints">7.5</div>
+            <div class="stat-label">Puntos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="resultGames">9</div>
+            <div class="stat-label">Partidas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Table Section -->
+  <section class="table-section">
+    <div class="table-header">
+      <h2>Tabla de Posiciones</h2>
+      <div class="table-filters">
+        <button class="filter-btn active" onclick="filterTable('all', this)">Todos</button>
+        <button class="filter-btn" onclick="filterTable('top10', this)">Top 10</button>
+        <button class="filter-btn" onclick="filterTable('top20', this)">Top 20</button>
+      </div>
+    </div>
+    <div class="table-container">
+      <table class="ranking-table">
+        <thead>
+          <tr>
+            <th>Pos</th>
+            <th>Jugador</th>
+            <th>Elo</th>
+            <th>Puntos</th>
+            <th>Partidas</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Dynamic content will be inserted here -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer-copyright">
+      <a href="index.html">Volver al inicio</a> | 
+      © 2026 Jose Alberto Peralta Escobedo. Todos los derechos reservados.
+    </p>
+  </footer>
+  <script src="js/tabla.js"></script>
+</body>
+</html>
